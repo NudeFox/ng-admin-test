@@ -7,6 +7,7 @@
     <a class="navbar-brand" href="#" ng-click="appController.displayHome()">PSTool</a>
 </div>
 <ul class="nav navbar-top-links navbar-right hidden-xs">
+    <ma-menu-bar menu="::appController.menu"></ma-menu-bar>
     <li uib-dropdown>
         <a uib-dropdown-toggle href="#" aria-expanded="true" ng-controller="username">
             <i class="fa fa-user fa-lg"></i>&nbsp;{{ username }}&nbsp;<i class="fa fa-caret-down"></i>

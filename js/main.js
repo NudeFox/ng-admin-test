@@ -18,9 +18,11 @@ myApp.directive('dashboardSummary', require('./dashboard/dashboardSummary'));
 
 myApp.controller('username', ['$scope', '$window', function($scope, $window) { // used in header.html
     $scope.username =  $window.localStorage.getItem('PSTool_login');
-}])
+}]);
 
-myApp.config(['NgAdminConfigurationProvider', function (nga) {
+myApp.config(
+    ['NgAdminConfigurationProvider',
+        function (nga) {
 
     // create the admin application
     var admin = nga.application('Adm-test')
@@ -28,14 +30,14 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
 
     // add entities
     admin.addEntity(nga.entity('users'));
-    admin.addEntity(nga.entity('userRoles'));
 
     // configure entities
     require('./users/config')(nga, admin);
 
     admin.dashboard(require('./dashboard/config')(nga, admin));
-    admin.header(require('./header.html'));
-    admin.menu(require('./menu')(nga, admin));
+    admin.header(require('./../templates/header.html'));
+    admin.layout(require('./../templates/layout.html'));
+    admin.menu(require('./menu')(nga));
 
     // attach the admin application to the DOM and execute it
     nga.configure(admin);
