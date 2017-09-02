@@ -13,6 +13,7 @@ myApp.config(['RestangularProvider', apiFlavor.responseInterceptor]);
 
 // custom directives
 myApp.directive('dashboardSummary', require('./dashboard/dashboardSummary'));
+myApp.directive('topBarMenu', require('./menuBar/menuBar'));
 
 // custom controllers
 
