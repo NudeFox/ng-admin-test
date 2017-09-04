@@ -1,7 +1,7 @@
 /**
  * Created by Drakon on 09/02/2017.
  */
-import menuTemplate from '../../templates/menuBar.html';
+import menuTemplate from './menuBar.html';
 import angular from 'angular';
 
 export default function topMenuBar($location, $rootScope, $compile) {
