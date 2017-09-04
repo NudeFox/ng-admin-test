@@ -1,4 +1,5 @@
-<div class="navbar-nav" role="navigation" compile="menu.template()">
+<div class="pg-nav__container" role="navigation" compile="menu.template()">
+    <div class="nav navbar-collapse collapse" uib-collapse="$parent.isCollapsed">
         <ul class="nav navbar-top-links" id="top-menu">
             <li class="entities-repeat" ng-repeat="(key, menu) in ::menu.children()" data-menu-id="{{ ::menu.uuid }}" compile="menu.template()">
                 <a ng-if="::menu.hasChild()" ng-click="toggleMenu(menu)" ng-class="::{'active': menu.isActive(path)}">
@@ -20,4 +21,5 @@
                 </ul>
             </li>
         </ul>
+    </div>
 </div>
