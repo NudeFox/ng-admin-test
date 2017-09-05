@@ -1,0 +1,7 @@
+var angular = require('angular');
+
+var myApp = angular.module('myApp', [
+    require('ng-admin'),
+]);
+
+

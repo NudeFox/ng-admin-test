@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
 
 module.exports = {
     entry: [
-        './js/main.js',
+        './app/main.js',
         './css/main.scss',
     ],
     output: {
@@ -17,6 +17,10 @@ module.exports = {
             { test: /\.js$/, loader: 'babel' },
             { test: /\.html$/, loader: 'html' },
             { test: /\.(woff2?|svg|ttf|eot)(\?.*)?$/, loader: 'url' },
+            { test: /\.(jpe?g|png|gif)$/i, loaders: [
+                'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+            ]},
             { test: /\.css$/, loader: ExtractTextPlugin.extract('css') },
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') }
         ],

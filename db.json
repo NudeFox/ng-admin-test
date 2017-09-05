@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Batman",
+      "second_name":"Dark",
+      "username": "Bad Guy",
+      "password": "123"
+    },
+    {
+      "id": 1,
+      "name": "Frodo",
+      "second_name":"Baggins",
+      "username": "LoTR",
+      "password": "ring"
+    },
+    {
+      "id": 2,
+      "name": "Aragorn",
+      "second_name":"King",
+      "username": "Bomg",
+      "password": "narsil"
+    },
+    {
+      "id": 3,
+      "name": "Gendalf",
+      "second_name":"White",
+      "username": "Pendolf",
+      "password": "12345"
+    },
+    {
+      "id": 4,
+      "name": "Golum",
+      "second_name":"Old",
+      "username": "Goliy",
+      "password": "Presious"
+    },
+    {
+      "id": 5,
+      "name": "Mery",
+      "second_name":"Pumpkin",
+      "username": "Pump u",
+      "password": "Pump"
+    },
+    {
+      "id": 6,
+      "name": "Sam",
+      "second_name":"Gemgy",
+      "username": "Gandgubas",
+      "password": "frodo"
+    },
+    {
+      "id": 7,
+      "name": "Brom",
+      "second_name":"Bromovich",
+      "username": "Brom",
+      "password": "ftor"
+    },
+    {
+      "id": 8,
+      "name": "Gimley",
+      "second_name":"The Gnom",
+      "username": "Sekira",
+      "password": "boroda"
+    },
+    {
+      "id": 9,
+      "name": "Legolas",
+      "second_name":"The Elf",
+      "username": "Robin_Hood",
+      "password": "imthebest"
+    }
+  ]
+}
