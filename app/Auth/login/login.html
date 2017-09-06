@@ -1,0 +1,27 @@
+<div class="login-container">
+    <div class="main">
+        <div class="login-form">
+            <h1>PSTool Login</h1>
+            <div class="head">
+                <img src="/user.png" alt=""/>
+            </div>
+            <form role="form" ng-submit="vm.login($event)">
+                <input type="text" class="text" id="username" placeholder="Username" ng-model="vm.username">
+                <input type="password" value="Password" id="password" placeholder="Your password" ng-model="vm.password">
+                <div class="form-group">
+                    <label for="rememberMe">
+                        <input type="checkbox" id="rememberMe" ng-model="vm.rememberMe" checked>
+                        <span>Remember me</span>
+                    </label>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Log In" >
+                </div>
+                <p><a href="#">Hint: John / Password</a></p>
+            </form>
+            <div class="alert alert-danger" ng-show="vm.authenticationError">
+                <strong>Failed to sign in!</strong> Please check your credentials and try again.
+            </div>
+        </div>
+    </div>
+</div>

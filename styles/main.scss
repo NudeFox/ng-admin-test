@@ -1,5 +1,7 @@
+@import "../app/Auth/auth.css";
 @import "~ng-admin/lib/sass/ng-admin.scss";
-@import "./ololo.scss";
+@import "../app/menuBar/topMenuBar";
+@import "../app/footer/footer";
 
 .poster_mini_thumbnail {
     max-width:25px;

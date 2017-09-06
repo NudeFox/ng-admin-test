@@ -8,7 +8,10 @@
     "url": "git://github.com/marmelab/ng-admin-demo.git"
   },
   "dependencies": {
-    "angular": "1.4.12",
+    "angular": "1.5.8",
+    "angular-cookies": "1.5.8",
+    "ngstorage": "0.3.10",
+    "angular-resource": "1.5.8",
     "@uirouter/angularjs": "latest"
   },
   "devDependencies": {
@@ -45,7 +48,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack  --progress --colors --devtool source-map -p",
     "start": "webpack --progress --colors --watch",
-    "serve": "webpack-dev-server --watch-content-base --hot --open"
+    "serve": "webpack-dev-server --watch-content-base --hot"
   },
   "author": "François Zaninotto",
   "license": "MIT"

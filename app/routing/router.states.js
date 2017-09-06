@@ -1,8 +1,10 @@
 /**
  * Created by User on 05.09.2017.
  */
-AppConfig.$inject = ['$stateProvider', '$urlRouterProvider', 'USER_ROLES'];
-export default function AppConfig($stateProvider, $urlRouterProvider, USER_ROLES) {
+import loginTemplate from '../Auth/login/login.html';
+
+StateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+export default function StateConfig($stateProvider, $urlRouterProvider) {
 
     // For any unmatched url, redirect to /
     $urlRouterProvider.otherwise("/");
@@ -10,32 +12,30 @@ export default function AppConfig($stateProvider, $urlRouterProvider, USER_ROLES
     // Now set up the states
     $stateProvider
         .state('home', {
-            url: "/",
-            templateUrl: "./index.html",
-            data: {
-                authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor, USER_ROLES.guest]
+            url: '/',
+            data: {authorities: []},
+            views: {
+                template: "<div class=\"home\">\n    <h1>I\'m your homepage! You\'re logged in as {{vm.account.login}}</h1>\n</div>",
+                controller: "HomeController",
+                controllerAs: 'vm'
+            },
+            resolve: {
+                authorize: ['Auth',
+                    function (Auth) {
+                        return Auth.authorize();
+                    }
+                ]
             }
         })
-        .state('state1', {
-            url: "/state1",
-            templateUrl: "state1.html",
-            data: {
-                authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]
-            }
+        .state('login', {
+            url: "/login",
+            template: loginTemplate,
+            controller: 'LoginController',
+            controllerAs: 'vm'
         })
-        .state('state2', {
-            url: "/state2",
-            templateUrl: "state2.html",
-            data: {
-                authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]
-            }
-        })
-        .state('adminState', {
-            url: "/adminState",
-            templateUrl: "adminState.html",
-            data: {
-                authorizedRoles: [USER_ROLES.admin]
-            }
+        .state('register', {
+            url: "/register",
+            template: "<div>Register is under maintenance</div>",
         })
     ;
 };
