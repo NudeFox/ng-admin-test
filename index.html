@@ -10,8 +10,13 @@
     </head>
     <body ng-strict-di class="main-content">
 
-        <div ui-view></div>
+        <div id="content-body" class="content">
+
+            <div ui-view=""></div>
+
+        </div>
 
         <pg-footer></pg-footer>
+
     </body>
 </html>
