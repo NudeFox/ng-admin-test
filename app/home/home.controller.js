@@ -1,25 +1,13 @@
-HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+HomeController.$inject = ['$sessionStorage', 'Auth'];
 
-export default function HomeController ($scope, Principal, LoginService, $state) {
+export default function HomeController ($sessionStorage, Auth) {
     var vm = this;
 
-    vm.account = null;
-    vm.isAuthenticated = null;
-    vm.login = LoginService.open;
-    vm.register = register;
-    $scope.$on('authenticationSuccess', function() {
-        getAccount();
-    });
+    initController();
 
-    getAccount();
+    function initController() {
+        vm.username = $sessionStorage.currentUser.firstName + ' ' + $sessionStorage.currentUser.lastName;
+    }
 
-    function getAccount() {
-        Principal.identity().then(function(account) {
-            vm.account = account;
-            vm.isAuthenticated = Principal.isAuthenticated;
-        });
-    }
-    function register () {
-        $state.go('register');
-    }
+
 }

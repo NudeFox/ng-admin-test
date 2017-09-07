@@ -15,16 +15,9 @@ export default function StateConfig($stateProvider, $urlRouterProvider) {
             url: '/',
             data: {authorities: []},
             views: {
-                template: "<div class=\"home\">\n    <h1>I\'m your homepage! You\'re logged in as {{vm.account.login}}</h1>\n</div>",
+                template: "<div class=\"home\">\n    <h1>I\'m your homepage! You\'re logged in as {{vm.username}}</h1>\n    <button class=\'btn primary-btn\' ng-click=\'logout()\'> Logout </button>\n</div>",
                 controller: "HomeController",
                 controllerAs: 'vm'
-            },
-            resolve: {
-                authorize: ['Auth',
-                    function (Auth) {
-                        return Auth.authorize();
-                    }
-                ]
             }
         })
         .state('login', {
