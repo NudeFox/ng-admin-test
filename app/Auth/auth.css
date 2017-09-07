@@ -28,11 +28,26 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
-.login-container{
-  background:#37474F;
-  font-family: 'Open Sans', sans-serif;
-
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
+
+#content-body {
+  flex-grow: 1;
+}
+
+.login-container{
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:#37474F;
+}
+
 .login-form {
   background:#eee;
   width: 26%;

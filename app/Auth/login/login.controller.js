@@ -1,3 +1,4 @@
+import '../auth.css';
 LoginController.$inject = ['$location', 'Auth'];
 
 export default function LoginController($location, Auth) {

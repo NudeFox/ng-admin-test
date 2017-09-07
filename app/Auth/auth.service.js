@@ -1,6 +1,6 @@
-Auth.$inject = ['$http', '$sessionStorage'];
+Auth.$inject = ['$http', '$sessionStorage', '$location'];
 
-export default function Auth($http, $sessionStorage) {
+export default function Auth($http, $sessionStorage, $location) {
     var service = {};
 
     service.Login = Login;
@@ -32,5 +32,6 @@ export default function Auth($http, $sessionStorage) {
         // remove user from local storage and clear http auth header
         delete $sessionStorage.currentUser;
         $http.defaults.headers.common.Authorization = '';
+        $location.path('/login');
     }
 }

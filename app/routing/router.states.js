@@ -2,6 +2,7 @@
  * Created by User on 05.09.2017.
  */
 import loginTemplate from '../Auth/login/login.html';
+import homeTemplate from '../home/home.html';
 
 StateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 export default function StateConfig($stateProvider, $urlRouterProvider) {
@@ -13,12 +14,9 @@ export default function StateConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {
             url: '/',
-            data: {authorities: []},
-            views: {
-                template: "<div class=\"home\">\n    <h1>I\'m your homepage! You\'re logged in as {{vm.username}}</h1>\n    <button class=\'btn primary-btn\' ng-click=\'logout()\'> Logout </button>\n</div>",
-                controller: "HomeController",
-                controllerAs: 'vm'
-            }
+            template: homeTemplate,
+            controller: "HomeController",
+            controllerAs: 'vm'
         })
         .state('login', {
             url: "/login",
