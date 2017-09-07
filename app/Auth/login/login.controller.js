@@ -14,7 +14,7 @@ export default function LoginController ($rootScope, $state, $timeout, Auth) {
     vm.requestResetPassword = requestResetPassword;
     vm.username = null;
 
-    $timeout(function (){angular.element('#username').focus();});
+    // $timeout(function (){angular.element(document.getElementById('username')).focus();});
 
     function login (event) {
         event.preventDefault();
