@@ -1,40 +1,43 @@
+<!--TODO validation-->
 <div class="login-container">
     <div class="main">
         <div class="login-form">
-            <h1>PSTool Login</h1>
+            <h1>Admin-tool Login</h1>
             <div class="head">
                 <img src="/user.png" alt=""/>
             </div>
             <form name="form" ng-submit="form.$valid && vm.login()" novalidate>
-                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" class="form-control" ng-model="vm.username" required />
-                    <div ng-messages="form.$submitted && form.username.$error" class="help-block">
-                        <div ng-message="required">Username is required</div>
-                    </div>
-                </div>
-                <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" ng-model="vm.password" required />
-                    <div ng-messages="form.$submitted && form.password.$error" class="help-block">
-                        <div ng-message="required">Password is required</div>
-                    </div>
-                </div>
+                <input type="text"
+                       class="text"
+                       ng-class="{ 'has-error': form.$submitted && form.username.$invalid }"
+                       id="username"
+                       placeholder="Username"
+                       ng-model="vm.username" required>
+                <input type="password"
+                       placeholder="Password"
+                       id="password"
+                       ng-model="vm.password" required>
                 <div class="form-group">
                     <label for="rememberMe">
                         <input type="checkbox" id="rememberMe" ng-model="vm.rememberMe" checked>
                         <span>Remember me</span>
                     </label>
                 </div>
-                <div class="form-group">
+                <div class="submit loader_container">
                     <input ng-disabled="vm.loading" type="submit" value="Log In" >
-                    <img ng-if="vm.loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    <div ng-if="vm.loading" class="adm-loader">
+                        <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==">
+                    </div>
                 </div>
                 <p><a href="#">Hint: John / Password</a></p>
             </form>
-            <div class="alert alert-danger" ng-if="vm.error">
+            <div class="alert alert-danger login-error" ng-if="vm.error">
                 <strong>Failed to sign in!</strong> Please check your credentials and try again.
             </div>
         </div>
     </div>
 </div>
+
+$scope.funnel = {};
+$scope.funnel.totalClicks = 9;
+<input type="number" min="0" placeholder="7500" ng-model="funnel.totalClicks" required>
